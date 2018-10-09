@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'media_seeds.csv'))
+csv_text = File.read(Rails.root.join('db', 'seed_data', 'media_seeds.csv'))
 
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
@@ -18,4 +18,5 @@ csv.each do |row|
   w.publication_year = row['publication_year']
   w.description = row['description']
   w.save
+  puts "#{w.title}"
 end
