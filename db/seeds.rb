@@ -11,5 +11,11 @@ csv_text = File.read(Rails.root.join('lib', 'seeds', 'media_seeds.csv'))
 
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
-  puts row.to_hash
+  w = Work.new
+  w.category = row['category']
+  w.title = row['title']
+  w.creator = row['creator']
+  w.publication_year = row['publication_year']
+  w.description = row['description']
+  w.save
 end
