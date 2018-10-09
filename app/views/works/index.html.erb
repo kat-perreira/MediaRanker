@@ -1,0 +1,26 @@
+<div class="wrapper_index">
+  <h2>Media</h2>
+  <ul>
+
+    <h3>Title</h3>
+    <% @works.each do |work| %>
+    <li class="title">
+      <%=link_to work.title,work_path(work.id)%>
+    </li>
+    <% end %>
+
+    <h3>Created By</h3>
+    <% @works.each do |work| %>
+    <li class="creator">
+      <%=work.creator%>
+    </li>
+    <% end %>
+
+    <h3>Published</h3>
+    <% @works.each do |work| %>
+    <li class="published">
+      <%=work.publication_year%>
+    </li>
+    <% end %>
+  </ul>
+</div>
