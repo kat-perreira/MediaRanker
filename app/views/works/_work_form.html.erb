@@ -1,0 +1,15 @@
+<%= form_with model: @work, class: 'work-form' do |f| %>
+
+  <h3><%= form_with %></h3>
+  <%= f.label :Category %>
+  <%= f.text_field :category %>
+  <%= f.label :Title %>
+  <%= f.text_field :title %>
+  <%= f.label :Creator %>
+  <%= f.text_field :creator %>
+  <%= f.label :Publication_year %>
+  <%= f.text_field :publication_year %>
+
+  <%= f.submit action_type, class: "work-form-submit-button" %>
+
+<% end %>
