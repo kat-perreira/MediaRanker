@@ -1,13 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  category: 
-  title: 
-  publication_year: 
+  category: album
+  title: The Right Stuff
+  publication_year: 2009
   description: MyString
 
+
 two:
-  category: 
-  title: 
-  publication_year: 
+  category: movie
+  title: Shrek
+  publication_year: 1990
   description: MyString

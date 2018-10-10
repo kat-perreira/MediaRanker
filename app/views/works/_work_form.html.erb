@@ -1,3 +1,12 @@
+
+<%= render partial: 'layouts/form_errors',
+locals: {
+  model: @work
+}
+%>
+
+
+
 <%= form_with model: @work, class: 'work-form' do |f| %>
 
   <h3><%= form_with %></h3>
