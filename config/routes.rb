@@ -3,8 +3,18 @@ Rails.application.routes.draw do
 
   root 'homepages#index'
 
-  resources :works
+  resources :votes, :works
+
+  resources :works do
+    resources :votes
+  end
+
+  resources :users do
+    resources :votes
+  end
+
 
   resources :homepages, only: [:index]
+
 
 end
