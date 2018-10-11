@@ -16,5 +16,8 @@ Rails.application.routes.draw do
 
   resources :homepages, only: [:index]
 
+  resources :sessions, only: [:new, :create]
+  post '/sessions/logout', to: 'sessions#logout', as: 'logout'
+
 
 end
