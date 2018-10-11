@@ -4,7 +4,6 @@ class WorksController < ApplicationController
     @works = Work.all
   end
 
-
   def edit
     @work = Work.find_by(id: params[:id])
   end
@@ -33,9 +32,9 @@ class WorksController < ApplicationController
   def show
     work_id = params[:id]
     @work = Work.find_by(id: work_id)
-    # if @work.nil?
-    #   head :not_found
-    # end
+    if @work.nil?
+      head :not_found
+    end
   end
 
   def update
