@@ -5,6 +5,7 @@ one:
   title: The Right Stuff
   publication_year: 2009
   description: MyString
+  creator: New Kids on the Block
 
 
 two:
@@ -12,3 +13,4 @@ two:
   title: Shrek
   publication_year: 1990
   description: MyString
+  creator: Dreamworks

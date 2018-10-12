@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
         redirect_to root_path
 
       else
+        flash.now[:error] = "can't be blank"
         render :new
 
       end
