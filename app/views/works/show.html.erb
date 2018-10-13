@@ -11,4 +11,5 @@
  <%= link_to "Delete work", @works, method: :delete, data: { confirm: "Are you sure that you want to delete ?" } %>
   <%= link_to "Edit Work", edit_work_path(@work.id) %>
 
+   <%= link_to "Upvote", upvote_path(@work.id), method: :post, class: "btn btn-outline-info" %>
 </div>
