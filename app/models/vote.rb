@@ -1,5 +1,5 @@
 class Vote < ApplicationRecord
 
-  belongs_to :author
+  belongs_to :user
   belongs_to :work
 end
