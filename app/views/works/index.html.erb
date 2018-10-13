@@ -1,26 +1,99 @@
-<div class="wrapper_index">
-  <h2>Media</h2>
-  <ul>
+<article>
+  <h1>All Media</h1>
+</article>
 
-    <h3>Title</h3>
-    <% @works.each do |work| %>
-    <li class="title">
-      <%=link_to work.title,work_path(work.id)%>
-    </li>
-    <% end %>
+<article>
+  <h2>Albums</h2>
+  <section>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class = "table_grid">Votes</th>
+          <th class = "table_grid">Title</th>
+          <th class = "table_grid">Created By</th>
+          <th class = "table_grid">Published</th>
+          <th class = "table_grid">Upvote</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @works.each do |work| %>
+        <% if work.category == "album" %>
+        <tr>
+          <td class = "table_grid"><%= work.total_votes %></td>
+          <td class = "table_grid"><%= link_to work.title, work_path(work.id) %></td>
+          <td class = "table_grid"><%= work.creator %></td>
+          <td class = "table_grid"><%= work.publication_year %></td>
+          <td class = "table_grid">
+            <button type="button"><%= link_to "Upvote", work_votes_path(work.id), method: :post %></button>
+          </td>
+        </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</article>
 
-    <h3>Created By</h3>
-    <% @works.each do |work| %>
-    <li class="creator">
-      <%=work.creator%>
-    </li>
-    <% end %>
+<article>
+  <h2>Books</h2>
+  <section>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class = "table_grid">Votes</th>
+          <th class = "table_grid">Title</th>
+          <th class = "table_grid">Created By</th>
+          <th class = "table_grid">Published</th>
+          <th class = "table_grid">Upvote</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @works.each do |work| %>
+        <% if work.category == "book" %>
+        <tr>
+          <td class = "table_grid"><%= work.total_votes %></td>
+          <td class = "table_grid"><%= link_to work.title, work_path(work.id) %></td>
+          <td class = "table_grid"><%= work.creator %></td>
+          <td class = "table_grid"><%= work.publication_year %></td>
+          <td class = "table_grid">
+            <button type="button"><%= link_to "Upvote", work_votes_path(work.id), method: :post %></button>
+          </td>
+        </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</article>
 
-    <h3>Published</h3>
-    <% @works.each do |work| %>
-    <li class="published">
-      <%=work.publication_year%>
-    </li>
-    <% end %>
-  </ul>
-</div>
+<article>
+  <h2>Movies</h2>
+  <section>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class = "table_grid">Votes</th>
+          <th class = "table_grid">Title</th>
+          <th class = "table_grid">Created By</th>
+          <th class = "table_grid">Published</th>
+          <th class = "table_grid">Upvote</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @works.each do |work| %>
+        <% if work.category == "movie" %>
+        <tr>
+          <td class = "table_grid"><%= work.total_votes %></td>
+          <td class = "table_grid"><%= link_to work.title, work_path(work.id) %></td>
+          <td class = "table_grid"><%= work.creator %></td>
+          <td class = "table_grid"><%= work.publication_year %></td>
+          <td class = "table_grid">
+            <button type="button"><%= link_to "Upvote", work_votes_path(work.id), method: :post %></button>
+          </td>
+        </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</article>
