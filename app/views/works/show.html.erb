@@ -1,14 +1,45 @@
 
-  <h2>Im the show page</h2>
+
   <strong>
 
-    <p> Title: <%= @work.title %></p>
+    <h2> Title: <%= @work.title %></h2>
     <p> Created by: <%= @work.creator %></p>
     <p> Published: <%= @work.publication_year %></p>
-    <p> <%= @work.description %></p>
+    <p> Description: <%= @work.description %></p>
   </strong>
   <div class="links">
- <%= link_to "Delete work", @works, method: :delete, data: { confirm: "Are you sure that you want to delete ?" } %>
-  <%= link_to "Edit Work", edit_work_path(@work.id) %>
+ <button type="button"><%= link_to "Delete work", @works, method: :delete, data: { confirm: "Are you sure that you want to delete ?" } %></button>
+  <button type="button"><%= link_to "Edit Work", edit_work_path(@work.id) %></button>
+  <button type="button"><%= link_to "Upvote", work_votes_path(@work.id), method: :post %></button>
 
 </div>
+
+<section>
+  <h2><%= @work.total_votes %> Votes for this <%= @work.category %></h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th class = "table_grid">User</th>
+          <th class = "table_grid">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% users = @work.user_voters %>
+        <% users.each do |user| %>
+          <tr>
+            <td class = "table_grid">
+              <%= user.username %>
+            </td>
+
+            <td class = "table_grid">
+              <% vote = user.vote(@work.id) %>
+              <%= vote[0].created_at.strftime("%b %d,%Y") %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+</section>

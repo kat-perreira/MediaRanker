@@ -38,10 +38,3 @@ describe Work do
   end
 
 end
-
-
-
-
-
-# Book must be of type Book
-# a new book instance if of type Book
