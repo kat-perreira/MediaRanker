@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :votes
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
+
 
   # I think business logic for voting goes here, connected with the user
   def vote(work_id)

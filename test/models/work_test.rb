@@ -2,17 +2,6 @@ require "test_helper"
 
 describe Work do
 
-  # Testing the relationship: one test for work to many relationship
-  # describe 'relations' do
-  #
-  #   it "has a vote" do
-  #     b = Work.first
-  #     vote = b.vote
-  #     expect(vote).must_be_instance_of Vote
-  #   end
-  # end
-
-  # Tests validations for presence and uniqueness
   describe 'validations' do
 
     before do
