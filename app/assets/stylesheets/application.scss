@@ -16,12 +16,18 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
-.title{
-  color: #ff4500;
+
+a {
+  color: #8183DB;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 #subtitle{
-  color: white;
+  color: #FFFFFF;
 }
 
 header{

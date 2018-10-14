@@ -4,14 +4,15 @@ class Work < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
 
+
   def total_votes
     votes = self.votes.count
     return votes
   end
 
-  # similar but opposite of the user model. refactor this
+  # similar but opposite of the user model. Put the vote items in desc order
   def user_voters
-    votes = self.votes
+    votes = self.votes.order(created_at: :desc)
     user_ids = []
 
     votes.each do |vote|
@@ -31,5 +32,7 @@ class Work < ApplicationRecord
     vote = Vote.where(user_id: user_id, work_id: self.id)
     return vote
   end
+
+
 
 end

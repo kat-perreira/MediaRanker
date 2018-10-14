@@ -49,29 +49,6 @@ class WorksController < ApplicationController
       redirect_to works_path
     end
 
-    # def upvote
-    #   @user = User.find_by(id: session[:user_id])
-    #
-    #   if @user
-    #     @user.votes.each do |vote|
-    #       if vote.work_id == @work.id
-    #         flash[:error]="This user already voted on this work"
-    #       else
-    #         new_vote = Vote.new
-    #         new_vote.work_id = @work.id
-    #         new_vote.user_id = @user.id
-    #         new_vote.save
-    #         @user.votes << new_vote
-    #       end
-    #     end
-    #   else
-    #     flash[:error] = "You are not logged in"
-    #     redirect_to sessions_path
-    #
-    #   end
-    # end
-
-
     private
 
     def work_params

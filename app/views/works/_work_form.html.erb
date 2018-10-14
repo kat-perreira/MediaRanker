@@ -11,7 +11,9 @@ locals: {
 
   <h3><%= form_with %></h3>
   <%= f.label :Category %>
-  <%= f.text_field :category %>
+  <%= f.select :category, ["movie", "book", "album"] %>
+    <br>
+
   <%= f.label :Title %>
   <%= f.text_field :title %>
   <%= f.label :Creator %>
