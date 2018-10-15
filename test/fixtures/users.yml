@@ -1,7 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+Mario:
   username: Mario
 
-two:
+Luigi:
   username: Luigi
+
+Kat:
+  username: Kat
+
+Riley:
+  username: Riley
+  
